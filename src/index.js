@@ -20,17 +20,34 @@ class App extends React.Component {
             rank: 'silver'  
         };
 
+        // this.handleChange = this.handleChangeId.bind(this);
+        // this.handleChange = this.handleChangeName.bind(this);
+        // this.handleChange = this.handleChangeEmail.bind(this);
+        // this.handleChange = this.handleChangeRank.bind(this);
 
+        this.handleChangeId = this.handleChangeId.bind(this);
+        this.handleChangeName = this.handleChangeName.bind(this);
+        this.handleChangeEmail = this.handleChangeEmail.bind(this);
+        this.handleChangeRank = this.handleChangeRank.bind(this);
     }
-    handleChange(){
 
+    handleChangeId(e){
+        console.log('handleChangeId() called');
+        this.setState({id: e.target.value});
+    }
+    handleChangeName(){
+        console.log('handleChangeName() called');
+    }
+    handleChangeEmail(){
+        console.log('handleChangeEmail() called');
+    }
+    handleChangeRank(){
+        console.log('handleChangeRank() called');
     }
 
     addUser(){
-        
+        console.log('addUser() called');
     }
-
-
     
     render() {
         console.log(this.props.names);    
@@ -40,13 +57,13 @@ class App extends React.Component {
         });
         
         return (<React.Fragment>
-            <input type="text" name="id" placeholder="enter id" onChange={this.handleChange} />
+            <input type="text" name="id" placeholder="enter id" onChange={this.handleChangeId} />
             <br/>
-            <input type="text" name="name" placeholder="enter name" onChange={this.handleChange} />
+            <input type="text" name="name" placeholder="enter name" onChange={this.handleChangeName} />
             <br/>
-            <input type="email" name="email" placeholder="enter email" onChange={this.handleChange} />
+            <input type="email" name="email" placeholder="enter email" onChange={this.handleChangeEmail} />
             <br/>
-            <input type="text" name="rank" placeholder="enter rank" onChange={this.handleChange} />
+            <input type="text" name="rank" placeholder="enter rank" onChange={this.handleChangeRank} />
             <br/>
             <button onClick={this.addUser} >ADD</button>
             <ul> {names} </ul>
