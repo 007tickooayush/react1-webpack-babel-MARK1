@@ -19,7 +19,18 @@ class App extends React.Component {
             email: 'newuser@gmail.com',
             rank: 'silver'  
         };
+
+
     }
+    handleChange(){
+
+    }
+
+    addUser(){
+        
+    }
+
+
     
     render() {
         console.log(this.props.names);    
